@@ -1,11 +1,16 @@
-def bubbleSort(alista):
-    for passnum in range(len(alista)-1, 0, -1):
-        for i in range(passnum):
-            if alista[i]>alista[i+1]:
-                tempo = alista[i]
-                alista[i] = alista[i+1]
-                alista[i+1] = tempo
+def insertionSort(lista):
 
-alista = [2, 5, 8, 12, 6, 4, 3, 20, 17, 19 ]
-bubbleSort(alista)
-print(alista)
+    for passn in range(1, len(lista)):
+        chave = lista[passn]
+        i = passn - 1
+
+        while i >= 0 and chave < lista[i]:
+            lista[i + 1] = lista[i]
+            i = i - 1
+
+        lista[i + 1] = chave
+
+
+vetor = [61, 59, 57, 55, 53, 51, 49, 47, 45, 43, 41, 39, 37, 35, 33, 31, 29, 27, 25, 23, 21, 19, 17, 15, 13, 11, 9, 7, 5, 3, 1]
+insertionSort(vetor)
+print(vetor)
